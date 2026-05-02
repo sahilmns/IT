@@ -31,10 +31,10 @@ def home():
 def about():
     return render_template("about.html")
 
-# 🔹 Services
-@app.route('/services')
-def services():
-    return render_template("services.html")
+# 🔹 courses
+@app.route('/courses')
+def courses():
+    return render_template("courses.html")
 
 # 🔹 Contact
 @app.route('/contact', methods=['GET', 'POST'])
