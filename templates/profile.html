@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<h1>My Profile 👤</h1>
+
+<p><b>Username:</b> {{ session['user'] }}</p>
+
+<p>Welcome to your profile page 🎉</p>
+
+<a href="/dashboard">Go to Dashboard</a>
+
+{% endblock %}

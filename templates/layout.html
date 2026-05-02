@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Information Technology</h1>
+   <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/services">Services</a>
+    <a href="/contact">Contact</a>
+    
+   {% if 'user' in session %}
+    <a href="/dashboard">Dashboard</a>
+    <a href="/profile">Profile</a>
+    <a href="/logout">Logout</a>
+{% else %}
+    <a href="/login">Login</a>
+    <a href="/signup">Signup</a>
+{% endif %}
+</nav>
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
