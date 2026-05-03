@@ -51,3 +51,108 @@ nav a {
     flex-wrap: wrap;
 }
 
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f7fb;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #0f172a;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+body {
+  font-family: Arial;
+  background: #f5f7fb;
+}
+
+a {
+  text-decoration: none;
+}
+
+div {
+  transition: 0.3s;
+}
+
+div:hover {
+  transform: translateY(-5px);
+}
+
+
+body {
+  font-family: Arial;
+  background: #f5f7fb;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  padding: 15px 40px;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.menu a:hover {
+  background: #2563eb;
+}
+
+div[style*="background:white"] {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+div[style*="background:white"]:hover {
+  transform: translateY(-5px);
+}

@@ -7,17 +7,18 @@ app.secret_key = "secret123"
 
 # 🔹 Database init
 def init_db():
-    conn = sqlite3.connect("users.db")
-    cur = conn.cursor()
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS users(
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username TEXT UNIQUE,
-            password TEXT
-        )
-    """)
-    conn.commit()
-    conn.close()
+    with sqlite3.connect("users.db") as conn:
+        cur = conn.cursor()
+
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS users(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                username TEXT UNIQUE,
+                password TEXT
+            )
+        """)
+
+        conn.commit()
 
 init_db()
 
@@ -31,7 +32,7 @@ def home():
 def about():
     return render_template("about.html")
 
-# 🔹 courses
+# 🔹 Courses
 @app.route('/courses')
 def courses():
     return render_template("courses.html")
@@ -54,15 +55,23 @@ def signup():
         hashed_password = generate_password_hash(password)
 
         try:
-            conn = sqlite3.connect("users.db")
-            cur = conn.cursor()
-            cur.execute("INSERT INTO users (username, password) VALUES (?, ?)", 
-                        (username, hashed_password))
-            conn.commit()
-            conn.close()
+            with sqlite3.connect("users.db", timeout=10) as conn:
+                cur = conn.cursor()
+
+                cur.execute(
+                    "INSERT INTO users (username, password) VALUES (?, ?)",
+                    (username, hashed_password)
+                )
+
+                conn.commit()
+
             return redirect(url_for('login'))
-        except:
-            return "User already exists ❌"
+
+        except sqlite3.IntegrityError:
+            return "Username already exists ❌"
+
+        except sqlite3.OperationalError:
+            return "Database busy, try again ⏳"
 
     return render_template("signup.html")
 
@@ -70,20 +79,24 @@ def signup():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+        username = request.form.get('username')
+        password = request.form.get('password')
 
         conn = sqlite3.connect("users.db")
         cur = conn.cursor()
-        cur.execute("SELECT * FROM users WHERE username=?", (username,))
+
+        cur.execute("SELECT password FROM users WHERE username=?", (username,))
         user = cur.fetchone()
+
+        print("USER FROM DB:", user)  # debug
+
         conn.close()
 
-        if user and check_password_hash(user[2], password):
+        if user and check_password_hash(user[0], password):
             session['user'] = username
             return redirect(url_for('dashboard'))
-        else:
-            return "Invalid Credentials ❌"
+
+        return "Invalid Credentials ❌"
 
     return render_template("login.html")
 
@@ -109,6 +122,6 @@ def logout():
     session.pop('user', None)
     return redirect(url_for('home'))
 
-# 🔹 Run
+# 🔹 Run app
 if __name__ == '__main__':
     app.run(debug=True)
