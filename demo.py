@@ -122,6 +122,28 @@ def logout():
     session.pop('user', None)
     return redirect(url_for('home'))
 
+
+# 🔹 Faculty Page
+@app.route('/faculty')
+def faculty():
+    faculty_list = [
+        {"name": "Dr. Sharma", "subject": "Data Structures"},
+        {"name": "Prof. Khan", "subject": "Web Development"},
+        {"name": "Ms. Gupta", "subject": "Python Programming"}
+    ]
+    return render_template("faculty.html", faculty=faculty_list)
+
+
+# 🔹 Notices Page
+@app.route('/notices')
+def notices():
+    notice_list = [
+        "Mid Semester Exam from 20th Sept 📅",
+        "Workshop on AI this Friday 🤖",
+        "Project submission deadline extended ⏳"
+    ]
+    return render_template("notices.html", notices=notice_list)
+
 # 🔹 Run app
 if __name__ == '__main__':
     app.run(debug=True)

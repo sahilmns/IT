@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Faculty{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align:center;">Our Faculty 👨‍🏫</h1>
+
+<div class="cards">
+    {% for f in faculty %}
+    <div class="card">
+        <h3>{{ f.name }}</h3>
+        <p>{{ f.subject }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
