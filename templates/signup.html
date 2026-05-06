@@ -4,12 +4,30 @@
 
 {% block content %}
 
-<h1>Signup</h1>
+<!-- CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
 
-<form method="POST">
-    <input type="text" name="username" placeholder="Enter username" required><br><br>
-    <input type="password" name="password" placeholder="Enter password" required><br><br>
-    <button type="submit">Signup</button>
-</form>
+<!-- 🔥 Background -->
+<div class="bg-animation"></div>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+<div class="overlay"></div>
+
+<!-- Form -->
+<div class="form-container">
+    <div class="form-box">
+        <h1>Signup</h1>
+
+        <form method="POST">
+            <input type="text" name="username" placeholder="Enter username" required>
+            <input type="password" name="password" placeholder="Enter password" required>
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+</div>
+
+<!-- 🔥 JS (PARALLAX) -->
+<script src="{{ url_for('static', filename='auth.js') }}"></script>
 
 {% endblock %}

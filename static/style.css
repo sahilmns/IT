@@ -156,3 +156,29 @@ div[style*="background:white"] {
 div[style*="background:white"]:hover {
   transform: translateY(-5px);
 }
+
+
+.form-container {
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+    height: 80vh;              /* full screen height ka 80% */
+}
+
+.form-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.form-box button {
+    padding: 10px 20px;
+}
