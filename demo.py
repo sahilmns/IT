@@ -127,9 +127,9 @@ def logout():
 @app.route('/faculty')
 def faculty():
     faculty_list = [
-        {"name": "Dr. Sharma", "subject": "Data Structures"},
+        {"name": "Dr. Vikas", "subject": "Data Structures"},
         {"name": "Prof. Khan", "subject": "Web Development"},
-        {"name": "Ms. Gupta", "subject": "Python Programming"}
+        {"name": "Mrs. Gupta", "subject": "Python Programming"}
     ]
     return render_template("faculty.html", faculty=faculty_list)
 
