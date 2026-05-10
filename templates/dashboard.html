@@ -1,75 +1,46 @@
+
+
 {% extends "layout.html" %}
 
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
 
-<div style="padding: 40px;">
+<section class="dashboard">
 
-  <h2>Welcome, {{ name }} 👋</h2>
+    <div class="dashboard-header">
+        <h2>Welcome, {{ name }} 👋</h2>
+        <p>
+            Access your courses, notices, and profile information from your dashboard.
+        </p>
+    </div>
 
-  <div style="display:flex; gap:20px; margin-top:30px; flex-wrap:wrap;">
+    <div class="dashboard-cards">
 
-    <!-- Courses -->
-    <a href="/courses" style="text-decoration:none; color:black;">
-      <div style="
-        background:white;
-        padding:20px;
-        border-radius:10px;
-        width:220px;
-        box-shadow:0 5px 15px rgba(0,0,0,0.1);
-        transition:0.3s;
-      ">
-        <h3>📚 Courses</h3>
-        <p>View your enrolled courses</p>
-      </div>
-    </a>
+        <div class="dashboard-card">
+            <div class="dashboard-icon">📚</div>
+            <h3>Courses</h3>
+            <p>View your enrolled courses and learning resources.</p>
+        </div>
 
-    <!-- Notices -->
-    <a href="/notices" style="text-decoration:none; color:black;">
-      <div style="
-        background:white;
-        padding:20px;
-        border-radius:10px;
-        width:220px;
-        box-shadow:0 5px 15px rgba(0,0,0,0.1);
-        transition:0.3s;
-      ">
-        <h3>📢 Notices</h3>
-        <p>Latest department updates</p>
-      </div>
-    </a>
+        <div class="dashboard-card">
+            <div class="dashboard-icon">📢</div>
+            <h3>Notices</h3>
+            <p>Stay updated with the latest announcements and updates.</p>
+        </div>
 
-    <!-- Profile -->
-    <a href="/profile" style="text-decoration:none; color:black;">
-      <div style="
-        background:white;
-        padding:20px;
-        border-radius:10px;
-        width:220px;
-        box-shadow:0 5px 15px rgba(0,0,0,0.1);
-        transition:0.3s;
-      ">
-        <h3>👤 Profile</h3>
-        <p>Manage your account</p>
-      </div>
-    </a>
+        <div class="dashboard-card">
+            <div class="dashboard-icon">👤</div>
+            <h3>Profile</h3>
+            <p>Manage your personal details and account settings.</p>
+        </div>
 
-  </div>
+    </div>
 
-  <br><br>
+    <div class="logout-container">
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
 
-  <a href="/logout"
-     style="
-      background:#ef4444;
-      color:white;
-      padding:10px 20px;
-      border-radius:8px;
-      text-decoration:none;
-     ">
-     Logout
-  </a>
+</section>
 
-</div>
-
-{% endblock %}
+{% endblock %}         
