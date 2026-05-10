@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+<div class="form-box">
+
+<h2>Edit Profile</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="text"
+name="fullname"
+placeholder="Full Name"
+required>
+
+<input type="email"
+name="email"
+placeholder="Email"
+required>
+
+<textarea
+name="bio"
+placeholder="Write your bio"
+style="width:100%; padding:10px; margin-top:10px;"></textarea>
+
+<br><br>
+
+<input type="file" name="profile_pic">
+
+<br><br>
+
+<button type="submit">Save Profile</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

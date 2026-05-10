@@ -4,12 +4,36 @@
 
 {% block content %}
 
+<div class="form-container">
+
+<div class="form-box">
+
 <h1>My Profile 👤</h1>
 
-<p><b>Username:</b> {{ session['user'] }}</p>
+{% if user[4] %}
+<img
+src="{{ url_for('static', filename='uploads/' + user[4]) }}"
+width="120"
+height="120"
+style="border-radius:50%; object-fit:cover;">
+{% endif %}
 
-<p>Welcome to your profile page 🎉</p>
+<p><b>Username:</b> {{ user[0] }}</p>
 
-<a href="/dashboard">Go to Dashboard</a>
+<p><b>Full Name:</b> {{ user[1] }}</p>
+
+<p><b>Email:</b> {{ user[2] }}</p>
+
+<p><b>Bio:</b> {{ user[3] }}</p>
+
+<br>
+
+<a href="/edit-profile">
+<button>Edit Profile</button>
+</a>
+
+</div>
+
+</div>
 
 {% endblock %}
