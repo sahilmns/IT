@@ -1,44 +1,58 @@
 {% extends "layout.html" %}
 
-{% block title %}Edit Profile{% endblock %}
+{% block title %}Profile{% endblock %}
 
 {% block content %}
 
-<div class="form-container">
+<section class="profile-section">
 
-<div class="form-box">
+    <!-- PROFILE CARD -->
+    <div class="profile-card">
 
-<h2>Edit Profile</h2>
+        <!-- TOP HEADER -->
+        <div class="profile-top">
 
-<form method="POST" enctype="multipart/form-data">
+            <div class="profile-avatar">
+                👤
+            </div>
 
-<input type="text"
-name="fullname"
-placeholder="Full Name"
-required>
+            <h1>My Profile</h1>
 
-<input type="email"
-name="email"
-placeholder="Email"
-required>
+            <p>
+                Welcome to your personal dashboard profile page.
+            </p>
 
-<textarea
-name="bio"
-placeholder="Write your bio"
-style="width:100%; padding:10px; margin-top:10px;"></textarea>
+        </div>
 
-<br><br>
+        <!-- PROFILE DETAILS -->
+        <div class="profile-details">
 
-<input type="file" name="profile_pic">
+            <div class="profile-info">
+                <span class="label">Username</span>
+                <span class="value">{{ session['user'] }}</span>
+            </div>
 
-<br><br>
+            <div class="profile-info">
+                <span class="label">Department</span>
+                <span class="value">Information Technology</span>
+            </div>
 
-<button type="submit">Save Profile</button>
+            <div class="profile-info">
+                <span class="label">Status</span>
+                <span class="value active-status">Active Student</span>
+            </div>
 
-</form>
+        </div>
 
-</div>
+        <!-- BUTTON -->
+        <div class="profile-btn-container">
+            <a href="/dashboard" class="profile-btn">
+                Go to Dashboard
+            </a>
+        </div>
 
-</div>
+    </div>
+
+</section>
 
 {% endblock %}
