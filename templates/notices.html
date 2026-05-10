@@ -1,17 +1,51 @@
-{% extends "layout.html" %}
+<section class="notices">
 
-{% block title %}Notices{% endblock %}
+<h2>Latest Notices</h2>
 
-{% block content %}
+<p>
+Stay updated with the latest announcements and academic activities of the department.
+</p>
 
-<h1 style="text-align:center;">Latest Notices 📢</h1>
+<ul class="notice-list">
 
-<div style="padding:40px;">
-    {% for n in notices %}
-        <div style="background:white; padding:15px; margin:10px 0; border-radius:8px;">
-            {{ n }}
-        </div>
-    {% endfor %}
-</div>
+    <li>
+        <strong>Internal Examination Schedule</strong><br>
+        <small>15 May 2026</small><br>
+        Internal examinations for all IT branches will commence from this date.
+    </li>
 
-{% endblock %}
+    <br>
+
+    <li>
+        <strong>AIML and Cloud Computing Workshops</strong><br>
+        <small>Registration Open</small><br>
+        Limited seats available. Interested students are encouraged to register early.
+    </li>
+
+    <br>
+
+    <li>
+        <strong>Cyber Security Seminar</strong><br>
+        <small>Next Month</small><br>
+        A seminar on cyber security awareness and practices will be conducted.
+    </li>
+
+    <br>
+
+    <li>
+        <strong>Annual Cultural Fest</strong><br>
+        <small>Coming Soon</small><br>
+        Students are invited to participate in various cultural activities and performances.
+    </li>
+
+    <br>
+
+    <li>
+        <strong>Tech Carnival 2026</strong><br>
+        <small>June 2026</small><br>
+        A technical event featuring coding competitions, project showcases, and innovation challenges.
+    </li>
+
+</ul>
+
+</section>
