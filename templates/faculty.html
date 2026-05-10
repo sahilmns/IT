@@ -1,18 +1,36 @@
-{% extends "layout.html" %}
+<section class="faculty">
 
-{% block title %}Faculty{% endblock %}
+<h2>Faculty</h2>
 
-{% block content %}
+<p>
+The Information Technology Department is supported by a team of dedicated and experienced faculty members committed to academic excellence and student development.
+</p>
 
-<h1 style="text-align:center;">Our Faculty 👨‍🏫</h1>
+<!-- HOD -->
+<h3>Head of Department</h3>
+<p><strong>Dr. Asmita Moghe</strong></p>
 
-<div class="cards">
-    {% for f in faculty %}
-    <div class="card">
-        <h3>{{ f.name }}</h3>
-        <p>{{ f.subject }}</p>
-    </div>
-    {% endfor %}
-</div>
+<!-- Faculty Members -->
+<h3>Faculty Members</h3>
+<ul>
+    <li>Prof. Arpit Namdev – Assistant Professor (Lab Incharge)</li>
+    <li>Prof. Anjana Nigam Patney – Assistant Professor (Department Coordinator)</li>
+    <li>Prof. Neera Lal – Assistant Professor</li>
+    <li>Prof. Vikas Rohit – Assistant Professor (Data Structures)</li>
+</ul>
 
-{% endblock %}
+<!-- Faculty Strengths -->
+<h3>Faculty Strengths</h3>
+<ul>
+    <li>Experienced and qualified teaching staff with strong academic backgrounds</li>
+    <li>Student-focused approach with emphasis on conceptual clarity</li>
+    <li>Active involvement in workshops, seminars, and technical activities</li>
+    <li>Continuous guidance for academic projects and practical learning</li>
+    <li>Supportive mentorship for student growth and career development</li>
+</ul>
+
+<p>
+Faculty members actively support students in academics, projects, and technical development.
+</p>
+
+</section>
