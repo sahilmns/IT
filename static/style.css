@@ -1,12 +1,11 @@
-/* =====================================================
+/* =========================================================
    GOOGLE FONT
-===================================================== */
-
+========================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* =====================================================
-   GLOBAL STYLES
-===================================================== */
+/* =========================================================
+   RESET & GLOBAL
+========================================================= */
 
 *{
     margin:0;
@@ -34,9 +33,9 @@ ul{
     list-style:none;
 }
 
-/* =====================================================
-   CUSTOM SCROLLBAR
-===================================================== */
+/* =========================================================
+   SCROLLBAR
+========================================================= */
 
 ::-webkit-scrollbar{
     width:10px;
@@ -51,9 +50,9 @@ ul{
     border-radius:10px;
 }
 
-/* =====================================================
+/* =========================================================
    NAVBAR
-===================================================== */
+========================================================= */
 
 .navbar{
     width:100%;
@@ -68,7 +67,9 @@ ul{
     z-index:1000;
 
     background:rgba(15,23,42,0.92);
+
     backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
 
     box-shadow:0 6px 24px rgba(0,0,0,0.12);
 }
@@ -82,8 +83,8 @@ ul{
 }
 
 .logo{
-    width:55px;
-    height:55px;
+    width:58px;
+    height:58px;
 
     border-radius:50%;
 
@@ -94,7 +95,7 @@ ul{
     align-items:center;
 
     color:white;
-    font-size:20px;
+    font-size:22px;
     font-weight:700;
 
     box-shadow:0 10px 25px rgba(37,99,235,0.35);
@@ -124,7 +125,7 @@ ul{
 .menu li a{
     position:relative;
 
-    padding:10px 18px;
+    padding:11px 18px;
 
     border-radius:12px;
 
@@ -164,14 +165,14 @@ ul{
     width:65%;
 }
 
-/* =====================================================
+/* =========================================================
    HERO SECTION
-===================================================== */
+========================================================= */
 
 .hero{
     position:relative;
 
-    padding:140px 20px;
+    padding:150px 20px;
 
     text-align:center;
 
@@ -185,7 +186,7 @@ ul{
     color:white;
 }
 
-/* GLOW CIRCLES */
+/* GLOW EFFECTS */
 
 .hero::before{
     content:"";
@@ -223,17 +224,17 @@ ul{
     position:relative;
     z-index:2;
 
-    font-size:68px;
+    font-size:72px;
     font-weight:800;
 
-    margin-bottom:22px;
+    margin-bottom:24px;
 }
 
 .hero p{
     position:relative;
     z-index:2;
 
-    max-width:760px;
+    max-width:780px;
 
     margin:auto;
 
@@ -250,7 +251,7 @@ ul{
 
     margin-top:35px;
 
-    padding:16px 34px;
+    padding:16px 36px;
 
     border:none;
     border-radius:14px;
@@ -274,16 +275,17 @@ ul{
     background:#eff6ff;
 }
 
-/* =====================================================
-   SECTION CONTAINER
-===================================================== */
+/* =========================================================
+   COMMON SECTION CONTAINER
+========================================================= */
 
 .about,
 .contact,
 .courses,
 .faculty,
 .dashboard,
-.notices-section{
+.notices,
+.profile-section{
     max-width:1250px;
 
     margin:70px auto;
@@ -308,7 +310,8 @@ ul{
 .courses::before,
 .faculty::before,
 .dashboard::before,
-.notices-section::before{
+.notices::before,
+.profile-section::before{
     content:"";
 
     position:absolute;
@@ -322,16 +325,17 @@ ul{
     background:linear-gradient(90deg,#2563eb,#06b6d4,#7c3aed);
 }
 
-/* =====================================================
+/* =========================================================
    HEADINGS
-===================================================== */
+========================================================= */
 
 .about h2,
 .contact h2,
 .courses h2,
 .faculty h2,
-.dashboard-header h2,
-.notices-header h1{
+.dashboard h2,
+.notices h2,
+.profile-top h1{
     text-align:center;
 
     font-size:52px;
@@ -340,19 +344,25 @@ ul{
     margin-bottom:35px;
 
     background:linear-gradient(90deg,#2563eb,#06b6d4,#7c3aed);
-background-clip: text;
+
+    background-clip:text;
     -webkit-background-clip:text;
+
+    color:transparent;
     -webkit-text-fill-color:transparent;
 
     position:relative;
 }
 
+/* UNDERLINE */
+
 .about h2::after,
 .contact h2::after,
 .courses h2::after,
 .faculty h2::after,
-.dashboard-header h2::after,
-.notices-header h1::after{
+.dashboard h2::after,
+.notices h2::after,
+.profile-top h1::after{
     content:"";
 
     position:absolute;
@@ -370,24 +380,24 @@ background-clip: text;
     background:linear-gradient(90deg,#2563eb,#06b6d4);
 }
 
-/* =====================================================
+/* =========================================================
    PARAGRAPHS
-===================================================== */
+========================================================= */
 
 .about p,
 .contact p,
 .courses p,
 .faculty p,
-.dashboard-header p,
-.notices-header p{
+.dashboard p,
+.notices p{
     font-size:18px;
     color:#475569;
     line-height:1.9;
 }
 
-/* =====================================================
+/* =========================================================
    SUB HEADINGS
-===================================================== */
+========================================================= */
 
 .about h3,
 .contact h3,
@@ -405,9 +415,9 @@ background-clip: text;
     padding-left:16px;
 }
 
-/* =====================================================
-   CARDS
-===================================================== */
+/* =========================================================
+   CARD LAYOUT
+========================================================= */
 
 .cards,
 .dashboard-cards{
@@ -437,8 +447,6 @@ background-clip: text;
     transition:0.4s ease;
 }
 
-/* TOP LINE */
-
 .card::before,
 .dashboard-card::before{
     content:"";
@@ -453,8 +461,6 @@ background-clip: text;
 
     background:linear-gradient(90deg,#2563eb,#06b6d4,#7c3aed);
 }
-
-/* GLOW */
 
 .card::after,
 .dashboard-card::after{
@@ -483,10 +489,7 @@ background-clip: text;
 .card h3,
 .dashboard-card h3{
     font-size:26px;
-
     margin-bottom:14px;
-
-    color:#0f172a;
 }
 
 .card p,
@@ -494,9 +497,9 @@ background-clip: text;
     color:#475569;
 }
 
-/* =====================================================
-   LIST ITEMS
-===================================================== */
+/* =========================================================
+   FACULTY & COURSES LISTS
+========================================================= */
 
 .faculty ul,
 .courses ul{
@@ -533,37 +536,37 @@ background-clip: text;
     box-shadow:0 14px 28px rgba(37,99,235,0.12);
 }
 
-/* =====================================================
-   NOTICE CARDS
-===================================================== */
+/* =========================================================
+   NOTICES PAGE
+========================================================= */
 
-.notice-container{
-    display:flex;
-    flex-direction:column;
-    gap:25px;
+.notice-list{
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+
+    margin-top:45px;
 }
 
-.notice-card{
+.notice-list li{
     background:white;
 
-    border-radius:26px;
+    border-radius:28px;
 
-    padding:28px;
-
-    display:flex;
-    align-items:center;
-    gap:24px;
+    padding:30px;
 
     position:relative;
 
     overflow:hidden;
 
-    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+    box-shadow:0 12px 35px rgba(0,0,0,0.08);
 
     transition:0.35s ease;
 }
 
-.notice-card::before{
+.notice-list li::before{
     content:"";
 
     position:absolute;
@@ -577,54 +580,43 @@ background-clip: text;
     background:linear-gradient(90deg,#2563eb,#06b6d4,#7c3aed);
 }
 
-.notice-card:hover{
-    transform:translateY(-8px);
+.notice-list li:hover{
+    transform:translateY(-10px);
 
-    box-shadow:0 18px 45px rgba(37,99,235,0.16);
+    box-shadow:0 18px 45px rgba(37,99,235,0.15);
 }
 
-.notice-icon{
-    width:70px;
-    height:70px;
+.notice-list strong{
+    display:block;
 
-    border-radius:20px;
+    font-size:24px;
 
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    margin-bottom:12px;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
-    font-size:30px;
-
-    flex-shrink:0;
-
-    box-shadow:0 10px 24px rgba(37,99,235,0.25);
+    color:#0f172a;
 }
 
-.notice-content p{
-    font-size:18px;
-    color:#334155;
+.notice-list small{
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    font-size:14px;
 }
 
-/* =====================================================
+/* =========================================================
    PROFILE SECTION
-===================================================== */
-
-.profile-section{
-    min-height:85vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:40px 20px;
-}
+========================================================= */
 
 .profile-card{
     width:100%;
-    max-width:700px;
+    max-width:720px;
+
+    margin:auto;
 
     background:white;
 
@@ -639,20 +631,6 @@ background-clip: text;
     box-shadow:0 15px 45px rgba(0,0,0,0.08);
 
     transition:0.35s ease;
-}
-
-.profile-card::before{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:8px;
-
-    background:linear-gradient(90deg,#2563eb,#06b6d4,#7c3aed);
 }
 
 .profile-card:hover{
@@ -689,22 +667,9 @@ background-clip: text;
     margin-bottom:40px;
 }
 
-.profile-top h1{
-    font-size:46px;
-
-    margin-bottom:12px;
-
-    background:linear-gradient(90deg,#2563eb,#06b6d4,#7c3aed);
-background-clip: text;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
 .profile-top p{
     color:#64748b;
 }
-
-/* PROFILE INFO */
 
 .profile-details{
     display:flex;
@@ -748,9 +713,16 @@ background-clip: text;
     font-weight:700;
 }
 
-/* =====================================================
+/* =========================================================
    BUTTONS
-===================================================== */
+========================================================= */
+
+.profile-btn,
+.logout-btn,
+.hero button,
+.form-box button{
+    transition:0.35s ease;
+}
 
 .profile-btn,
 .logout-btn{
@@ -765,8 +737,6 @@ background-clip: text;
     color:white;
 
     font-weight:600;
-
-    transition:0.35s ease;
 
     box-shadow:0 10px 24px rgba(37,99,235,0.22);
 }
@@ -784,9 +754,9 @@ background-clip: text;
     margin-top:40px;
 }
 
-/* =====================================================
+/* =========================================================
    FORM STYLING
-===================================================== */
+========================================================= */
 
 .form-container{
     min-height:85vh;
@@ -800,7 +770,7 @@ background-clip: text;
 
 .form-box{
     width:100%;
-    max-width:450px;
+    max-width:460px;
 
     background:white;
 
@@ -878,8 +848,6 @@ background-clip: text;
     font-weight:700;
 
     cursor:pointer;
-
-    transition:0.35s ease;
 }
 
 .form-box button:hover{
@@ -888,9 +856,9 @@ background-clip: text;
     box-shadow:0 12px 28px rgba(37,99,235,0.25);
 }
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer{
     margin-top:80px;
@@ -904,9 +872,9 @@ footer{
     padding:30px 20px;
 }
 
-/* =====================================================
+/* =========================================================
    ANIMATIONS
-===================================================== */
+========================================================= */
 
 @keyframes fadeUp{
     from{
@@ -922,15 +890,15 @@ footer{
 
 .card,
 .dashboard-card,
-.notice-card,
+.notice-list li,
 .profile-card,
 .faculty ul li{
     animation:fadeUp 0.8s ease;
 }
 
-/* =====================================================
+/* =========================================================
    RESPONSIVE DESIGN
-===================================================== */
+========================================================= */
 
 @media(max-width:992px){
 
@@ -946,7 +914,7 @@ footer{
     }
 
     .hero h1{
-        font-size:50px;
+        font-size:52px;
     }
 
     .hero p{
@@ -958,7 +926,8 @@ footer{
     .courses,
     .faculty,
     .dashboard,
-    .notices-section{
+    .notices,
+    .profile-section{
         padding:40px 25px;
         margin:40px 15px;
     }
@@ -982,8 +951,8 @@ footer{
     .contact h2,
     .courses h2,
     .faculty h2,
-    .dashboard-header h2,
-    .notices-header h1,
+    .dashboard h2,
+    .notices h2,
     .profile-top h1{
         font-size:36px;
     }
@@ -1005,13 +974,9 @@ footer{
         gap:8px;
     }
 
-    .notice-card{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
     .cards,
-    .dashboard-cards{
+    .dashboard-cards,
+    .notice-list{
         grid-template-columns:1fr;
     }
 }
